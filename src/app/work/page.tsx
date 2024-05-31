@@ -20,12 +20,18 @@ import logoPhobia from '@/images/clients/phobia/logo-dark.svg'
 import logoUnseal from '@/images/clients/unseal/logo-dark.svg'
 import { formatDate } from '@/lib/formatDate'
 import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
+import policereport_bl from '@/images/clients/Police Report AI BLACK.svg'
+import unmik_bl from '@/images/clients/UNMIK-Logo-black.png'
+import niche_bl from '@/images/clients/Niche_BLACK.svg'
+import sparks_bl from '@/images/clients/SPARK LOGO (1).svg'
 
 function CaseStudies({
   caseStudies,
 }: {
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
+  const serviceOrder = ['Laravel', 'Python', 'Branding'];
+  caseStudies.sort((a, b) => serviceOrder.indexOf(a.service) - serviceOrder.indexOf(b.service));
   return (
     <Container className="mt-40">
       <FadeIn>
@@ -70,12 +76,12 @@ function CaseStudies({
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                  <div className="mt-8 flex">
+                  <div className="mt-8 flex ">
                     <Button
-                      href={caseStudy.href}
+                     
                       aria-label={`Read case study: ${caseStudy.client}`}
                     >
-                      Read case study
+                      Case study coming soon...
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -96,16 +102,14 @@ function CaseStudies({
   )
 }
 
+
 const clients = [
-  ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
+  ['policereport_bl', policereport_bl, 'Police Report'],
+  ['unmik_bl', unmik_bl, ],
+  ['niche_bl', niche_bl, 'Niche'],
+  ['sparks_bl', sparks_bl, 'Sparks'],
 ]
+
 
 function Clients() {
   return (
@@ -119,15 +123,16 @@ function Clients() {
         <Border as={FadeIn} />
         <ul
           role="list"
-          className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4"
+          className="mt-10 grid grid-cols-1 gap-y-16 lg:gap-y-0 gap-x-[140px]  lg:grid-cols-4"
         >
-          {clients.map(([client, logo]) => (
-            <li key={client} className="group">
+          {clients.map(([client, logo, text]) => (
+            <li key={client} className="group flex flex-col justify-start lg:justify-center items-center">
               <FadeIn className="overflow-hidden">
                 <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
+                <Image src={logo} alt={client} unoptimized className={client === 'unmik_bl' ? 'w-[140px] ml-0' : ''} />
                 </Border>
               </FadeIn>
+              <p className="mt-2 text-center font-extrabold text-xl ">{text}</p>
             </li>
           ))}
         </ul>
@@ -160,13 +165,6 @@ export default async function Work() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
-      >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
-      </Testimonial>
 
       <Clients />
 

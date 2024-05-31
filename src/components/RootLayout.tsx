@@ -69,13 +69,13 @@ function Header({
           onMouseEnter={() => setLogoHovered(true)}
           onMouseLeave={() => setLogoHovered(false)}
         >
-          <Logomark
-            className="h-8 sm:hidden"
+          {/* <Logomark
+            className=""
             invert={invert}
             filled={logoHovered}
-          />
+          /> */}
           <Logo
-            className="hidden h-8 sm:block"
+            className="h-8 "
             invert={invert}
             filled={logoHovered}
           />
@@ -146,10 +146,10 @@ function Navigation() {
         <NavigationItem href="/work">Our Work</NavigationItem>
         <NavigationItem href="/about">About Us</NavigationItem>
       </NavigationRow>
-      <NavigationRow>
+      {/* <NavigationRow>
         <NavigationItem href="/process">Our Process</NavigationItem>
         <NavigationItem href="/blog">Blog</NavigationItem>
-      </NavigationRow>
+      </NavigationRow> */}
     </nav>
   )
 }
