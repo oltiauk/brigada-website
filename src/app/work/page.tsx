@@ -30,7 +30,7 @@ function CaseStudies({
 }: {
   caseStudies: Array<MDXEntry<CaseStudy>>
 }) {
-  const serviceOrder = ['Laravel', 'Python', 'Branding'];
+  const serviceOrder = ['Python', 'Laravel', 'Branding'];
   caseStudies.sort((a, b) => serviceOrder.indexOf(a.service) - serviceOrder.indexOf(b.service));
   return (
     <Container className="mt-40">
@@ -79,9 +79,9 @@ function CaseStudies({
                   <div className="mt-8 flex ">
                     <Button
                      
-                      aria-label={`Read case study: ${caseStudy.client}`}
+                      aria-label={`Read blog study: ${caseStudy.client}`}
                     >
-                      Case study coming soon...
+                      Blog coming soon...
                     </Button>
                   </div>
                   {caseStudy.testimonial && (
@@ -104,9 +104,9 @@ function CaseStudies({
 
 
 const clients = [
+  ['niche_bl', niche_bl, 'Niche'],
   ['policereport_bl', policereport_bl, 'Police Report'],
   ['unmik_bl', unmik_bl, ],
-  ['niche_bl', niche_bl, 'Niche'],
   ['sparks_bl', sparks_bl, 'Sparks'],
 ]
 

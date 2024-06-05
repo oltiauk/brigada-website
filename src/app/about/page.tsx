@@ -26,7 +26,7 @@ import { loadArticles } from '@/lib/mdx'
 
 function Culture() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
+    <div className="mt-24 bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
       <SectionIntro
         eyebrow="Our culture"
         title="Balance your passion with your passion for life."
@@ -211,9 +211,9 @@ export default async function About() {
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="11" label="Underpaid employees" />
-          <StatListItem value="8" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
+          <StatListItem value="10" label="Underpaid employees" />
+          <StatListItem value="4" label="Placated clients" />
+          <StatListItem value="$25" label="Invoices billed" />
         </StatList>
       </Container>
 

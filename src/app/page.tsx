@@ -28,15 +28,15 @@ import { type CaseStudy, type MDXEntry, loadCaseStudies } from '@/lib/mdx'
 
 
 const clients = [
-  ['policereport', policereport],
-  ['unmik', unmik],
   ['niche', niche],
+  ['unmik', unmik],
   ['sparks', sparks],
+  ['policereport', policereport]
 ]
 
 function Clients() {
   return (
-    <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
+    <div className="mt-24 bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
         <FadeIn className="flex items-center  gap-x-8">
           <h2 className="text-left font-display ml-5 md:ml-0  text-2xl mb-11 font-semibold tracking-wider text-white sm:text-left">
